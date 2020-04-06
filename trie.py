@@ -43,7 +43,6 @@ class Trie:
         words = prefix_tokenize(words)
         matches = []
         for w in words:
-            w = prefix_preprocess(w)
             matches.extend(match(self._root, w, w))
         return matches
 
