@@ -90,12 +90,7 @@ def add_word(node: TrieNode, word: str, locs: [Location]) -> None:
     Returns:
     None.
     """
-    if word:
-        c = word[0]
-        node.children[c] = node.children.get(c, TrieNode())
-        add_word(node.children[c], word[1:], locs)
-    else:
-        node.children[TERMINATOR] = node.children.get(TERMINATOR, []) + locs
+    pass
 
 
 def match(node: TrieNode, prefix: str, trace: str) -> [(str, [Location])]:
@@ -116,25 +111,4 @@ def match(node: TrieNode, prefix: str, trace: str) -> [(str, [Location])]:
     List of pairs where each pair contains a prefix-matched word and the
     locations where the word appears.
     """
-    if trace:
-        # Traverse node according to trace. No match if traversal cannot proceed.
-        c = trace[0]
-        if c not in node.children:
-            return []
-        return match(node.children[c], prefix, trace[1:])
-    else:
-        '''prefix matched at node. Now traverse to each leaf in the tree rooted
-        at node, remember the letter-path to the leaf, and retrieve the
-        locations stored in it.'''
-        # Iterative DFS from node.
-        stack = [(prefix, node)]
-        matches = []
-        while stack:
-            prefix, node = stack[0]
-            t = TERMINATOR
-            if t in node.children:
-                matches.append((prefix, node.children[t]))
-            stack += [(prefix+c, child) for c, child in node.children.items()
-                      if c != TERMINATOR]
-            stack = stack[1:]
-        return matches
+    pass

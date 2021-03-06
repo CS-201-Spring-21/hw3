@@ -1,5 +1,6 @@
 from document import *
 from trie import *
+from index import *
 
 
 class Corpus:
@@ -21,7 +22,7 @@ class Corpus:
         nothing.
         """
         # The structures that will support the main functionalities.
-        # self._index = Index()
+        self._index = Index()
         self._trie = Trie()
         # Initialize the structures with all *.txt files under path.
         path = pathlib.Path(path)
@@ -29,7 +30,7 @@ class Corpus:
             if i % 500 == 0:
                 print(f'Building Corpus: Read {i:5} documents.')
             doc = Document(doc)
-            # self._index.add_doc(doc)
+            self._index.add_doc(doc)
             self._trie.add_doc(doc)
         print(f'Built corpus from {i} documents.')
 

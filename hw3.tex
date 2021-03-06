@@ -8,11 +8,10 @@
 \pagestyle{headandfoot}
 \runningheadrule
 \runningfootrule
-\runningheader{CS 201 Data Structures II}{HW 4: Information Retrieval}{Spring 2020}
+\runningheader{CS 201 Data Structures II}{HW 3: Information Retrieval}{Spring 2021}
 \runningfooter{}{Page \thepage\ of \numpages}{}
 \firstpageheader{}{}{}
 
-% \qformat{{\large\bf \thequestion. \thequestiontitle}\hfill[\totalpoints\ points]}
 \qformat{{\large\bf \thequestion. \thequestiontitle}\hfill}
 \boxedpoints
 
@@ -20,9 +19,9 @@
 
 \graphicspath{{images/}}
 
-\title{Homework 4: Information Retrieval\\Moogle -- My Awesome Google}
-\author{CS 201 Data Structures II\\Habib University\\Spring 2020}
-\date{Due: 1830h on Monday, 6 April}
+\title{Homework 3: Information Retrieval\\Moogle -- My Awesome Google}
+\author{CS 201 Data Structures II\\Habib University\\Spring 2021}
+\date{Due: 2359h on Sunday, 21 Mar}
 
 \begin{document}
 \maketitle
@@ -46,7 +45,6 @@
     \caption{Not this \href{https://finalfantasy.fandom.com/wiki/Final_Fantasy_Wiki}{Moogle}!}
     \label{fig:moogle}
   \end{subfigure}
-  \caption{What we want and not necessarily want from Moogle.}
 \end{figure}
 
 In this assignment you will build Moogle (My Google), a system to perform information retrieval tasks on a corpus. Specifically, Moogle will perform 2 tasks.
@@ -57,7 +55,7 @@ In this assignment you will build Moogle (My Google), a system to perform inform
 
 The first task is supported by building a trie with all the words in the corpus. The second is supported by an inverted index built from all the documents from the corpus. You will write the necessary functionality without building the interface.
 
-The corpus consists of 3028 news articles published between 1 January, 2020 and 21 March, 2020 matching the keyword, ``coronavirus'', and retrieved through \href{https://open-platform.theguardian.com}{the API} of \href{https://www.theguardian.com/}{The Guardian}.
+The corpus consists of 3028 news articles published between 1 January, 2020 and 21 March, 2020 matching the keyword, ``coronavirus'', and retrieved through \href{https://open-platform.theguardian.com}{the API} of \href{https://www.theguardian.com/}{The Guardian}. You may obtain it from \href{https://drive.google.com/file/d/1yCDm2d3Jj6Z5XcG_ut7mKB-gnWpjDc_S/view?usp=sharing}{here}.
 
 \section{Tokenization}
 
@@ -116,7 +114,7 @@ Congratulations, you have implemented your (very first) search engine! Be proud 
 
 In so doing, you will begin to realize some quirks. You may come across strange characters (these are due to unhandled Unicode characters in the original documents). Stop words will pop up. Punctuation is not correctly handled. Some of the original documents are also strange--they contain little to no content, more strange characters. All of this is common in information retrieval.
 
-In this section, you will refine your search engine to become even more awesome!
+In this section, you will refine your search engine to make it even more awesome!
 
 Make a new branch in your repository called \texttt{awesome} to include your refinements. The \texttt{master} branch will contain code to meet basic functionality and pass Travis tests. Add a section called \textit{Refinements} at the end of the \texttt{README} in the \texttt{awesome} branch where you will list all the refinements that you incorporate. There are no specific instructions for these refinements and you are free to implement what you like. Some refinements are a matter of personal taste, so for each refinement include a line or two to explain why you think that refinement improves your search engine.
 
@@ -137,14 +135,9 @@ Your results are only as good as your input and the quirks mentioned above are t
 
 \section*{Credits}
 
-This homework and related files are courtesy of \href{http://qasimpasta.info}{Muhammad Qasim Pasta} and \href{https://www.facebook.com/abdullah.zafar.547389}{Abdullah Zafar}
+This homework and related files are courtesy of \href{http://qasimpasta.info}{Muhammad Qasim Pasta}.
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
 
 %%% Local Variables:
 %%% mode: latex
