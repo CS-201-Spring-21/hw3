@@ -11,27 +11,31 @@ class Corpus:
     - compelte: given a query, return prefix-matched words from the corpus
     """
 
-    def __init__(self, path):
+    def __init__(self, path, index=True, trie=True):
         """ Creates the corpus from *.txt files under path.
 
         Args:
         - self: the corpus to create, mandatory object reference
         - path: the documents to add are under path as *.txt files
+        - index: construct index if True. 
+        - trie: construct trie if True. 
 
         Returns:
         nothing.
         """
         # The structures that will support the main functionalities.
-        self._index = Index()
-        self._trie = Trie()
+        self._index = Index() if index else None
+        self._trie = Trie() if trie else None
         # Initialize the structures with all *.txt files under path.
         path = pathlib.Path(path)
         for i, doc in enumerate(sorted(path.rglob("*.txt"))):
             if i % 500 == 0:
                 print(f'Building Corpus: Read {i:5} documents.')
             doc = Document(doc)
-            self._index.add_doc(doc)
-            self._trie.add_doc(doc)
+            if index:
+                self._index.add_doc(doc)
+            if trie:
+                self._trie.add_doc(doc)
         print(f'Built corpus from {i} documents.')
 
     def search(self, query: str) -> [(str, float)]:
@@ -50,7 +54,8 @@ class Corpus:
         matching score.
         """
         # Delegete the search to the inverted index.
-        return self._index.query(query)
+        if self._index:
+            return self._index.query(query)
 
     def complete(self, query: str) -> [(str, Location)]:
         """Returns a list of words from the corpus that prefix-match the words
@@ -67,4 +72,5 @@ class Corpus:
         a list of (word, Location) pairs in arbitrary order.
         """
         # Delegete the search to the trie.
-        return self._trie.complete(query)
+        if self._trie:
+            return self._trie.complete(query)
