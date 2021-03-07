@@ -46,7 +46,7 @@ cases = fetch_testcases(path + 'cases.txt')
 zipfilename = 'articles.zip'
 open(zipfilename, 'wb').write(urlopen(path + zipfilename).read())
 zipfile.ZipFile(zipfilename, 'r').extractall()
-corpus = Corpus('articles/', trie=False)
+corpus = Corpus('articles/')
 
 
 def test_index():

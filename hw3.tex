@@ -107,6 +107,14 @@ You have to implement the following functions.
 
 \noindent There should not be a need to modify any of the other code.
 
+\subsection{Testing}
+
+Your submission will be tested automatically by GitHub which will run \texttt{pytest} on the test files in your repository. Do not modify these files. You can replicate the tests locally in your machine by running \texttt{pytest} on the test files.
+
+Testing involves the creation of an index on the corpus which is a lengthy process. Each test times out after 4 minutes. A timed out test is a failed test.
+
+See your TAs for help with automatic testing in GitHub.
+   
 \section{Fine Tuning}
 \label{sec:refine}
 
@@ -116,7 +124,7 @@ In so doing, you will begin to realize some quirks. You may come across strange 
 
 In this section, you will refine your search engine to make it even more awesome!
 
-Make a new branch in your repository called \texttt{awesome} to include your refinements. The \texttt{master} branch will contain code to meet basic functionality and pass Travis tests. Add a section called \textit{Refinements} at the end of the \texttt{README} in the \texttt{awesome} branch where you will list all the refinements that you incorporate. There are no specific instructions for these refinements and you are free to implement what you like. Some refinements are a matter of personal taste, so for each refinement include a line or two to explain why you think that refinement improves your search engine.
+Make a new branch in your repository called \texttt{awesome} to include your refinements. The \texttt{main} branch will contain code to meet basic functionality and pass \texttt{pytest} tests. Add a section called \textit{Refinements} at the end of the \texttt{README} in the \texttt{awesome} branch where you will list all the refinements that you incorporate. There are no specific instructions for these refinements and you are free to implement what you like. Some refinements are a matter of personal taste, so for each refinement include a line or two to explain why you think that refinement improves your search engine.
 
 \subsection{Document Cleaning (Garbage In Garbage Out)}
 
@@ -132,10 +140,9 @@ Your results are only as good as your input and the quirks mentioned above are t
 
 \paragraph{\texttt{nltk}} As we see above, Information Retrieval has strong overlaps with Natural Language Processing (NLP). As such you may find the \href{https://www.nltk.org}{\textit{Natural Language Toolkit (ntlk)}} in python to be especially useful as you refine Moogle.
 
-
 \section*{Credits}
 
-This homework and related files are courtesy of \href{http://qasimpasta.info}{Muhammad Qasim Pasta}.
+This homework and related files are due in part to \href{http://qasimpasta.info}{Muhammad Qasim Pasta}.
 
 \end{document}
 
