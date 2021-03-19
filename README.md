@@ -38,7 +38,7 @@ There are 3 parts to this assignment. Lack of submission of any part will result
 
 Please solve the problem and complete your tasks as indicated in the problem sheet and push the relevant files to your GitHub repository. Any files in the repository at the time of the deadline will be considered as your submission. As your submission will be partly graded by your peers, please do not include identifying information in it.
 
-This is a team submission and the earned score is the team's _Submission Score_. It is computed as per the accompanying _rubric.xlsx_.
+This is a team submission and the earned score is the team's _Submission Score_. It is computed as per the accompanying _hw3-review.xlsx_.
 
 Deadline: 2359h on Sunday, 21 March
 

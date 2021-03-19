@@ -28,7 +28,7 @@ class Document:
         path = pathlib.Path(path)
         self.doc_id = path.stem
         # Tokenize the content, replacing Unicode characters with '?'
-        content = path.read_text(errors='replace')
+        content = path.read_text(encoding='UTF-8', errors='replace')
         self._words = document_tokenize(content)
 
     def words(self) -> [(str, [Location])]:
